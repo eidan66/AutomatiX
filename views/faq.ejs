@@ -1,0 +1,214 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="../public/css/faq.css">
+</head>
+
+
+<body>
+    <!-- Navbar begin-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E141A;">
+            <a class="navbar-brand" href="/">
+                <a class="navbar-brand js-scroll-trigger" href="/"><img src="../public/images/AutomatiX-light.png"
+                        alt="" style="max-width:120px; margin-top: -7px; margin-right: 7px;"></a>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span></button>
+            <div class="collapse navbar-collapse mobile-small" id="navbarResponsive">
+                <%-include('./partials/messages');%>
+                <ul class="navbar-nav ml-auto my-2 my-lg-0 float-left">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="/portal">Portal</a></li>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav"
+                            href="/users/logout">Logout</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/logout"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar end-->
+
+    <center>
+        <h1 id="welcome-faq">FAQ Common cage problems</h1><br />
+    </center>
+    <br />
+    <div class="accordion" id="accordionAutomatiX">
+        <!-- #1 -->
+        <div class="card" style="background: transparent;">
+            <div class="card-header" id="heading1">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                        data-target="#collapse1" aria-expanded="true" aria-controls="collapseOne">
+                        <span class="glyphicon glyphicon-tag"></span> I'm on Salesforce Classic for the time being. Is
+                        that okay?
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionAutomatiX">
+                <div class="card-body ">
+                    Yes, but Lightning is the future of the Salesforce platform and user experience. It empowers our
+                    customers to move faster, do more, and be more productive through reimagined classic features and
+                    boosted features available only in Lightning Experience.<br /><br />
+                    <span><a href="https://www.salesforce.com/form/lightning/lightning-features/?d=cta-body-promo-1">DOWNLOAD
+                            THE FULL LIGHTNING EXPERIENCE FEATURES LIST</a></span><br /><br />
+                    All new Salesforce innovation is solely in Lightning. So we encourage each and every one of our
+                    customers to transition
+                    to Lightning Experience soon and start benefiting from everything Lightning has to offer. We're here
+                    to help! Check out
+                    the Lightning Experience Transition Tools for a one-stop shop to simplify your transition
+                    journey.<br /><br />
+                    <span><a href="https://appexchange.salesforce.com/mktcollections/cloud-collections/Lightning">LEARN
+                            MORE WITH THE TRANSITION TOOLS
+                        </a></span><br /><br />
+                </div>
+            </div>
+        </div>
+
+        <!-- #2 -->
+        <div class="card" style="background: transparent;">
+            <div class="card-header" id="heading2">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        <span class="glyphicon glyphicon-tag"></span> Do I need to move my entire org all at
+                        once?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionAutomatiX">
+                <div class="card-body">
+                    No, you don't have to move everyone at once. In fact, we recommend transitioning users in phases,
+                    starting with a small
+                    pilot, to keep the effort manageable and iterate on lessons learned.<br /><br />
+                    <span> <a
+                            href="No, you don't have to move everyone at once. In fact, we recommend transitioning users in phases, starting with a small pilot, to keep the effort manageable and iterate on lessons learned. ">GET
+                            THE TOP 3 STRATEGIES FOR ROLLING OUT LIGHTNING EXPERIENCE E-BOOK</a></span><br /><br />
+
+                </div>
+            </div>
+        </div>
+        <!-- #3 -->
+        <div class="card" style="background: transparent;">
+            <div class="card-header" id="heading3">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        <span class="glyphicon glyphicon-tag"></span>Will I need to create an entirely new org?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionAutomatiX">
+                <div class="card-body">
+                    No, you don't have to create another org. All of your data and logic customizations will still work
+                    in Lightning
+                    Experience when you switch over.
+
+                </div>
+            </div>
+        </div>
+        <!-- #4 -->
+        <div class="card" style="background: transparent;">
+            <div class="card-header" id="heading4">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        <span class="glyphicon glyphicon-tag"></span> Does Lightning cost more?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAutomatiX">
+                <div class="card-body">
+                    No, it’s just a better way to use Salesforce. To more quickly gain all the productivity benefits,
+                    plan your move to
+                    Lightning Experience. The Learning Map provides a curated set of resources to help you visualize the
+                    recommended steps
+                    and best practices in each phase of a Lightning Experience transition: Discover, Roll Out, and
+                    Optimize. Each phase
+                    includes a variety of links to business value content, transition tools, templates, videos, help
+                    content, and more!
+                    <br /><br />
+                    <span> <a
+                            href="http://lightningtransitionlearningmap.com/?utm_source=website&utm_medium=FAQ_Page&utm_campaign=Learning_Map_FAQ_Page&d=cta-body-promo-27">Check
+                            Out The Journey To Lightning Experience Learning Map</a></span><br /><br />
+                </div>
+            </div>
+        </div>
+        <!-- #5 -->
+        <div class="card" style="background: transparent;">
+            <div class="card-header" id="heading5">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        <span class="glyphicon glyphicon-tag"></span> What is Lightning Experience vs. the Lightning
+                        Framework?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionAutomatiX">
+                <div class="card-body">
+                    The Lightning Experience is a more productive, modern way for everyone to work. The Lightning
+                    Framework is an
+                    environment that radically speeds up how you customize Salesforce and build new apps.
+                    <br /><br />
+                    <span> <a
+                            href="The Lightning Experience is a more productive, modern way for everyone to work. The Lightning Framework is an environment that radically speeds up how you customize Salesforce and build new apps.">Learn
+                            more on the admin page</a></span><br /><br />
+            </div>
+        </div>
+    </div>
+    <!-- #6 -->
+    <div class="card" style="background: transparent;">
+        <div class="card-header" id="heading6">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                    <span class="glyphicon glyphicon-tag"></span> Is there a Lightning community where I can ask more
+                    questions?
+                </button>
+            </h2>
+        </div>
+        <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionAutomatiX">
+            <div class="card-body">Yes, there is, full of admins and devs. You can meet experts, ask questions, and get
+                answers from an entire community of
+                people ready to help.<br /><br />
+                <span> <a
+                        href="https://success.salesforce.com/featuredGroupDetail?id=a1z3A000007SBrQQAW#a0L3000000RuJKwEAN">Visit
+                        the Salesforce Success Community now
+                    </a></span><br /><br />
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--  FAQ Page end -->
+
+
+
+    <!-- Bootstrap js  begin-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap js end -->
+</body>

@@ -1,0 +1,66 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../public/css/admin.css">
+</head>
+
+
+<body>
+    <!-- Navbar begin-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E141A;">
+            <a class="navbar-brand" href="/">
+                <a class="navbar-brand js-scroll-trigger" href="/"><img src="../public/images/AutomatiX-light.png"
+                        alt="" style="max-width:120px; margin-top: -7px; margin-right: 7px;"></a>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span></button>
+            <div class="collapse navbar-collapse mobile-small" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0 float-left">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="/FAQ"
+                            style="color: white;">FAQ</a></li>
+                    <li class="nav-item"><a class=" nav-link js-scroll-trigger center-nav"
+                            href="/users/logout">Logout</a>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar end-->
+
+    <div class="row mt-5" style="height: 60vh;margin-bottom:7%;">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body">
+                <h1 class="text-center mb-3"><b>Admin Options</b></h1>
+                <div class="list-group">
+                    <center><a href="admin/register"
+                            class="list-group-item list-group-item-action list-group-item-success">Create New
+                            User /
+                            Admin</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-info"
+                            onclick="alert(`Demo only`);">Change user
+                            account name</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-danger"
+                            onclick="alert(`Demo only`);">Delete
+                            User</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

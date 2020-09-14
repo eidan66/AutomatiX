@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;523;600;700;800&family=Quicksand:wght@300;400;500;515;600;700&display=swap');
+@import url('//db.onlinewebfonts.com/c/4aedb84cb7e5aa0e9c807efdb0cd947f?family=Levenim+MT');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-image: url('../images/backgrounds/OPEN-CASE-BG.png');
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+
+    /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+    background-attachment: fixed;
+
+    /* This is what makes the background image rescale based
+     on the container's size */
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+body:after {
+    content: "";
+    position: fixed;
+    /* stretch a fixed position to the whole screen */
+    top: 0;
+    height: 100vh;
+    /* fix for mobile browser address bar appearing disappearing */
+    left: 0;
+    right: 0;
+    z-index: -1;
+    /* needed to keep in the background */
+    background: url('../images/backgrounds/Background.png') center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+form#202242056063039.jotform-form {
+    background-color: transparent !important;
+}
+
+.form-all {
+    background-color: rgb(14, 20, 26, 0.85) !important;
+}
+
+.dropdown-menu {
+    background-color: #0E141A !important;
+}
+
+.dropdown-item {
+    color: white !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
+
+/* On screens that are 992px or less */
+@media screen and (max-width: 992px) {
+    .mobile-small {
+        -ms-flex-align: center !important;
+        -webkit-box-align: center !important;
+        align-items: center !important;
+        -ms-flex-pack: center !important;
+        -webkit-box-pack: center !important;
+        justify-content: center !important;
+    }
+
+    a.navbar-brand img {
+        margin-right: 702px !important;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    a.navbar-brand img {
+        margin-right: 645px !important;
+    }
+}
+
+@media screen and (max-width: 895px) {
+    a.navbar-brand img {
+        margin-right: 575px !important;
+    }
+}
+
+@media screen and (max-width: 818px) {
+    a.navbar-brand img {
+        margin-right: 520px !important;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    a.navbar-brand img {
+        margin-right: 500px !important;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    a.navbar-brand img {
+        margin-right: 470px !important;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    a.navbar-brand img {
+        margin-right: 400px !important;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    a.navbar-brand img {
+        margin-right: 335px !important;
+    }
+}
+
+@media screen and (max-width: 577px) {
+    a.navbar-brand img {
+        margin-right: 280px !important;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    a.navbar-brand img {
+        margin-right: 229px !important;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    a.navbar-brand img {
+        margin-right: 169px !important;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    a.navbar-brand img {
+        margin-right: 125px !important;
+    }
+}
+
+
+@media screen and (max-width: 380px) {
+    .mobile-mode {
+        margin-bottom: 5%;
+    }
+
+    a.navbar-brand img {
+        margin-right: 90px !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    a.navbar-brand img {
+        margin-right: 60px !important;
+    }
+}

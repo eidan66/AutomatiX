@@ -1,0 +1,350 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="../public/js/xpjDd+JR"></script>
+    <link rel="stylesheet" href="../public/css/portal.css">
+</head>
+
+
+<body>
+    <!-- Navbar begin-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E141A;">
+            <a class="navbar-brand" href="/">
+                <a class="navbar-brand js-scroll-trigger" href="/"><img src="../public/images/AutomatiX-light.png"
+                        alt="" style="max-width:120px; margin-top: -7px; margin-right: 7px;"></a>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse mobile-small" id="navbarResponsive">
+                <%-include('./partials/messages');%>
+                <ul class="navbar-nav ml-auto my-2 my-lg-0 float-left">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link js-scroll-trigger center-nav dropdown-toggle" href="#" role="button"
+                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Case
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/users/jotform">Create New Case</a>
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="/users/show-all-cases-query">View All Cases</a>
+                                <a class="dropdown-item" href="/users/all-open-cases-query">View All <b>New</b>
+                                    Cases</a>
+                                <a class="dropdown-item" href="/users/case-number-query">View Last Case Number</a>
+                            </div>
+                        </div>
+                    </li>
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="/portal">Portal</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="/faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="/users/icount">Invoices
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav"
+                            href="/users/logout">Logout</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar end-->
+
+    <p class=" welcome text-center welcome-size">Welcome, <%=name %></p>
+    <p class="welcome text-center welcome-size2">How can we help you ? </p>
+
+
+    <!-- Search start -->
+    <center>
+        <div class="input-group md-form form-sm form-2 pl-0 " style="width: 40%;">
+            <input class="form-control my-0 py-1 " type="text" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="input-group-text white lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                        aria-hidden="true" onclick="alert(`Demo Only`);"></i></button>
+            </div>
+        </div>
+    </center>
+    <!-- Search end -->
+
+    <!-- All Cases Table Print begin -->
+    <% if (cases) { %>
+    <!-- Chart 1 -->
+    <section class="container-fluid" style="margin-bottom: 25px;">
+        <row class="row mb-10">
+            <article class="col-xl-6 col-md-5 mb-10 " id="marg-canv">
+                <div class="shadow" style="background-color: rgb(14, 20, 26, 0.55) !important;">
+                    <div class="card-body">
+                        <div class="chartjs-size-monitor">
+                            <div class="chartjs-size-monitor-expand">
+                                <div class=""></div>
+                            </div>
+                            <div class="chartjs-size-monitor-shrink">
+                                <div class=""></div>
+                            </div>
+                        </div>
+                        <div style="width:100%; height:50vh;">
+                            <canvas id="myChart" height="500" width="1101"
+                                style="display: block; height: 400px; width: 881px;"
+                                class="chartjs-render-monitor"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="col-xl-6 col-md-5 mb-10 ">
+                <div class="shadow" style="background-color: rgb(14, 20, 26, 0.55) !important;">
+                    <div class="card-body">
+                        <div class="chartjs-size-monitor">
+                            <div class="chartjs-size-monitor-expand">
+                                <div class=""></div>
+                            </div>
+                            <div class="chartjs-size-monitor-shrink">
+                                <div class=""></div>
+                            </div>
+                        </div>
+                        <div style="width:100%; height:50vh;">
+                            <canvas id="myChart2" height="500" width="1101"
+                                style="display: block; height: 400px; width: 881px;"
+                                class="chartjs-render-monitor"></canvas>
+                        </div>
+                    </div>
+            </article>
+        </row>
+    </section>
+    <div class="table-responsive table-bordered table-md">
+        <table class="table table-hover">
+            <thead class="" style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Case Number</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Last Modified Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% cases.forEach(function(record,i){ %>
+                <tr>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;" scope="row"><%=i+1 %>
+                    </td>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;"><%=record.CaseNumber%>
+                    </td>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;"><%=record.Subject%>
+                    </td>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;"><%=record.Status%></td>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;">
+                        <%=record.LastModifiedDate%></td>
+                </tr>
+                <% }); %>
+                <script async>
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    // Global Options
+                    Chart.defaults.global.defaultFontFamily = 'LEVENIM';
+                    Chart.defaults.global.defaultFontSize = 25;
+                    Chart.defaults.global.defaultFontColor = 'white';
+                    var myChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['New', 'Working', 'Closed'],
+                            datasets: [
+                                {
+                                    label: 'Case Status',
+                                    data: ['<%=statusCount[0]%>', '<%=statusCount[1] %>', '<%=statusCount[2]%>'],
+                                    backgroundColor: ['#068398', '#99C6DF', '#BD2C25'],
+                                    borderColor: '#0E141A',
+                                    borderWidth: 1,
+                                    hoverBorderWidth: 3,
+                                    hoverBorderColor: '#000',
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            title: {
+                                display: true,
+                                text: 'Status',
+                            },
+                            legend: {
+                                display: true,
+                            },
+                        },
+                    });
+                </script>
+                <!-- Chart 2 -->
+                <script async>
+                    var ctx = document.getElementById('myChart2').getContext('2d');
+
+                    // Global Options
+                    Chart.defaults.global.defaultFontFamily = 'LEVENIM';
+                    Chart.defaults.global.defaultFontSize = 25;
+                    Chart.defaults.global.defaultFontColor = 'white';
+                    var maxSize = Math.max(`<%=priorityCount[0]%>`, `<%=priorityCount[1]%>`, `<%=priorityCount[2]%>`, `<%=priorityCount[3]%>`);
+                    maxSize += 5;
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Critical', 'High', 'Medium', 'Low',],
+                            datasets: [
+                                {
+                                    label: 'Case Priority',
+                                    data: [
+                                        `<%=priorityCount[3] %>`,
+                                        `<%=priorityCount[0] %>`,
+                                        `<%=priorityCount[1] %>`,
+                                        `<%=priorityCount[2] %>`,
+                                    ],
+                                    backgroundColor: ['#068398', '#99C6DF', '#BD2C25', 'rgb(251, 251, 252'],
+                                    borderColor: '#0E141A',
+                                    borderWidth: 1,
+                                    hoverBorderWidth: 3,
+                                    hoverBorderColor: '#000',
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            title: {
+                                display: true,
+                                text: 'Priority',
+                            },
+                            legend: {
+                                display: false,
+
+                            },
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        suggestedMax: maxSize,
+                                        suggestedMin: 0,
+                                        stepSize: 1,
+                                    }
+                                }],
+                            },
+                            layout: {
+                                padding: {
+                                    left: 50,
+                                    right: 0,
+                                    bottom: 0,
+                                    top: 0,
+
+                                }
+                            },
+                        },
+                    });
+                </script>
+                <% } %>
+            </tbody>
+        </table>
+        <!-- Chart 1 -->
+
+    </div>
+    <!-- All Cases Table Print end -->
+
+    <!-- All New Cases Table Print begin -->
+    <% if (status) { %>
+    <div class="table-responsive table-bordered table-md">
+        <table class="table table-hover">
+            <thead class="" style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Last Modified Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% status.forEach(function(record,i){ %>
+                <tr>
+                    <th style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;" scope="row"><%=i+1 %>
+                    </th>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;"><%=record.Subject%>
+                    </td>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;"><%=record.Status%></td>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;">
+                        <%=record.LastModifiedDate%></td>
+                </tr>
+                <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <!-- All New Cases Table Print end -->
+
+    <!-- Last Case Number Print begin -->
+    <% if (case_number) { %>
+    <div class="" style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;">
+        <% case_number.forEach(function(record){ %>
+        <script>
+            setTimeout(() => alert("Last case number : `<%=record.CaseNumber %>` (was update at :`<%=record.LastModifiedDate %>`)"), 700);</script>
+
+        <% }); %>
+        <% } %>
+    </div>
+    <!-- Last Case Number Print end -->
+
+    <!-- iCount Table Print begin -->
+    <% if (icount_information) { %>
+    <div class="table-responsive table-bordered table-md" id="invoice" style="margin-top: -22%; margin-bottom: 9%;">
+        <table class="table table-hover">
+            <thead class="" style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Document name</th>
+                    <th scope="col">Date Issued:</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% icount_information.forEach(function(record,i){ %>
+                <tr>
+                    <th style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;" scope="row"><%=i+1 %>
+                        </>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;"><%=record.docnum%></td>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;"><%=record.dateissued%>
+                    </td>
+                    <td style="background-color: rgb(14, 20, 26, 0.55) !important; color:white;">
+                        <%=record.total%>&#8362;</td>
+                </tr>
+                <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <!-- iCount Table Print end -->
+
+    <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+    <script
+        type="text/javascript">Calendly.initBadgeWidget({ url: 'https://calendly.com/michael-imas/call15?hide_landing_page_details=1', text: `Schedule with<br/> Technician or Manager`, color: '#00a2ff', textColor: '#ffffff', branding: false });</script>
+    <!-- Calendly badge widget end -->
+
+    <!-- Bootstrap js begin-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap js end -->
+
+
+</body>

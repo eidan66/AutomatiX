@@ -1,0 +1,236 @@
+<head>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/80818ddcb4.js" crossorigin="anonymous"></script>
+    <!-- Bootwatch -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.csss">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+        rel="stylesheet" type="text/css" />
+    <!-- Third party plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../public/css/landingPage.css">
+</head>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav"
+    style="background-color: rgb(14, 20, 26, 0.75);">
+    <a class="navbar-brand" href="/">
+        <a class="navbar-brand js-scroll-trigger" href="/"><img src="../public/images/AutomatiX-light.png" alt=""
+                style="max-width:120px; margin-top: -7px; margin-right: 7px;"></a>
+    </a>
+    <!-- 
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E141A;">
+            <a class="navbar-brand" href="/">
+                <a class="navbar-brand js-scroll-trigger" href="/"><img src="../public/images/AutomatiX-light.png"
+                        alt="" style="max-width:120px; margin-top: -7px; margin-right: 7px;"></a>
+            </a>
+     -->
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon">
+            <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+        </span></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <%-include('./partials/messages');%>
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+            <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="#contact">Contact</a></li>
+            <% if(user) { %>
+            <% if(user.role === 'user') { %>
+            <li class="nav-item"><a class=" nav-link js-scroll-trigger center-nav" href="/portal">Portal</a>
+                <% }%>
+                <% if(user.role === 'admin') { %>
+            <li class="nav-item"><a class=" nav-link js-scroll-trigger center-nav" href="/admin">Admin</a>
+                <% }%>
+            <li class="nav-item"><a class=" nav-link js-scroll-trigger center-nav" href="/users/logout">Logout</a>
+                <%}else {%>
+            <li class="nav-item"><a class=" nav-link js-scroll-trigger center-nav" href="/users/login">Login</a>
+                <% }%>
+            <li class="nav-item"><a class=" nav-link js-scroll-trigger center-nav"
+                    href="https://um6.salesforce.com">Technicians
+                    Login</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <h1 class="text-uppercase text-white font-weight-bold">AutomatiX Customer Portal
+                </h1>
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 font-weight-light mb-5">Need to Change those line to explain about our portal
+                </p>
+                <% if(user) { %>
+                <% if(user.role === 'user') { %>
+                <a class="btn btn-primary btn-xl js-scroll-trigger text-muted" href="/portal">Move to Portal</a>
+                <% }%>
+                <% if(user.role === 'admin') { %>
+                <a class="btn btn-primary btn-xl js-scroll-trigger text-muted" href="/admin">Move to Admin Page</a>
+                <% }%>
+                <%}else {%>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="/users/login">Login To Portal</a>
+                <% }%>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- About-->
+<section class="page-section bg-primary" id="about">
+    <div class=" container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-color mt-0">About Automatix</h2>
+                <p class="text-color mb-4 text-muted">Automatix is engaged in providing CRM solutions and automation
+                    for
+                    businesses, from the design and construction of new
+                    systems to the ongoing maintenance of existing systems.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services-->
+<section class="page-section" id="services">
+    <div class="container">
+        <h2 class="text-center mt-0">Our Service</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fa-4x text-primary mb-4"><img
+                            src="https://img.icons8.com/color/48/000000/money-box.png" /></i>
+                    <h3 class="h4 mb-2">Optimization of billing and collection</h3>
+                    <p class="text-muted mb-0">Saving 80% of the time invested in the billing and collection
+                        processes -
+                        will contribute to improving cash flow and
+                        preventing inconvenience to suppliers and employees. By automating documents such as issuing
+                        invoices and receipts,
+                        sending automated reminders for payment, transferring documents to the accountant and
+                        performing
+                        expense control.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fa-4x text-primary mb-4"><img
+                            src="https://img.icons8.com/plasticine/100/000000/rocket.png" /></i>
+                    <h3 class="h4 mb-2">Project</h3>
+                    <p class="text-muted mb-0">Ensure that the project is running properly and in accordance with
+                        schedules, including interfacing with task management
+                        systems. Updating the CRM and interfacing with the mailing system, for the purpose of
+                        sending
+                        automatic updates to the
+                        customer.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fa-4x text-primary mb-4"><img
+                            src="https://img.icons8.com/color/48/000000/total-sales-1.png" /></i>
+                    <h3 class="h4 mb-2">Accuracy of the sales process</h3>
+                    <p class="text-muted mb-0">Improving closing percentages and increasing customer return - we
+                        will
+                        build work processes that will lead to sending
+                        quotes at the click of a button, regular status tracking, fast clearing and polo-up with
+                        accurate messages.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fa-4x text-primary mb-4"><img
+                            src="https://img.icons8.com/color/48/000000/commercial.png" /></i>
+                    <h3 class="h4 mb-2">Exploitation of marketing processes</h3>
+                    <p class="text-muted mb-0">Build automated marketing processes such as mailing benefits at
+                        select
+                        times by email
+                        And in SMS, interfacing with marketing campaigns and creating a live chat bot
+                        Depending on the call script, and gives applicants an automatic answer 24/7</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact-->
+<section class="page-section bg-primary" id="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0" id="form-title">Would you like to join the company services?</h2>
+                <p class="text-muted mb-5">Fill in the following details and we will get back to you as soon as
+                    possible
+                    !
+                </p>
+            </div>
+            <div class="contact-form">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="txtName" class="form-control" placeholder="Your Name" value=""
+                                    required />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="txtEmail" class="form-control" placeholder="Your Email"
+                                    value="" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="txtPhone" class="form-control" placeholder="Your Phone Number"
+                                    value="" required />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea name="txtMsg" class="form-control" placeholder="Your Message"
+                                    style="width: 100%; height: 150px;" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="button" name="btnSubmit" class="btnContact" value="Send"
+                                    onclick="alert('The portal is collage project, DEMO');" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../public/js/scripts.js"></script>
+    <!-- Bootsnipp -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- General -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
+
+    <!-- Calendly -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+</footer>

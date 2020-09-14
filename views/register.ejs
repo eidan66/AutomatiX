@@ -1,0 +1,124 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../public/css/register.css">
+</head>
+
+
+<body>
+    <!-- Navbar begin-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0E141A;">
+            <a class="navbar-brand" href="/">
+                <a class="navbar-brand js-scroll-trigger" href="/"><img src="../public/images/AutomatiX-light.png"
+                        alt="" style="max-width:120px; margin-top: -7px; margin-right: 7px;"></a>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span></button>
+            <div class="collapse navbar-collapse mobile-small" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0 float-left">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger center-nav" href="/FAQ"
+                            style="color: white;">FAQ</a></li>
+                    <li class="nav-item"><a class=" nav-link js-scroll-trigger center-nav"
+                            href="/users/logout">Logout</a>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar end-->
+
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body">
+                <h1 class="text-center mb-3">
+                    <i class="fas fa-user-plus"></i> Register New User
+                </h1>
+                <%-include('./partials/messages');%>
+                <form action="/admin/register" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+                            value="<%= typeof name != 'undefined' ? name : '' %>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+                            value="<%= typeof email != 'undefined' ? email : '' %>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control"
+                            placeholder="Create Password"
+                            value="<%= typeof password != 'undefined' ? password : '' %>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password2">Confirm Password</label>
+                        <input type="password" id="password2" name="password2" class="form-control"
+                            placeholder="Confirm Password"
+                            value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" class="form-control">
+                            <option value="user" selected>User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group to-hide">
+                        <label for="contact_id">Contact ID</label>
+                        <input type="text" id="contact_id" name="contact_id" class="form-control"
+                            placeholder="Enter contact id"
+                            value="<%= typeof contact_id != 'undefined' ? contact_id : '' %>" />
+                    </div>
+                    <div class="form-group to-hide">
+                        <label for="account_id">Account ID</label>
+                        <input type="text" id="account_id" name="account_id" class="form-control"
+                            placeholder="Enter account id"
+                            value="<%= typeof account_id != 'undefined' ? account_id : '' %>" />
+                    </div>
+                    <div class="form-group to-hide">
+                        <label for="icount_id">iCount ID</label>
+                        <input type="text" id="icount_id" name="icount_id" class="form-control"
+                            placeholder="Enter icount id"
+                            value="<%= typeof icount_id != 'undefined' ? icount_id : '' %>" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Register
+                    </button>
+                </form>
+                <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $("#role").change(function () {
+        if ($(this).val() == "user") {
+            $('.to-hide').show();
+
+        } else {
+            $('.to-hide').hide();
+            $('.to-hide').removeAttr('required');
+            $('.to-hide').value('');
+
+        }
+    });
+    $("#role").trigger("change");
+</script>
