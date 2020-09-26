@@ -17,7 +17,7 @@ JavaScript, Node.js, HTML, CSS, BOOTSRAP, HEROKU, MongoDB, Salesforce, iCount, C
     - Password : greenAvi9911.
 - Admin Role
   - Username : admin@isr.co.il
-  - Password : ronit_1357_isro
+  - Password : AdminUser666!
 
 ## API
 
