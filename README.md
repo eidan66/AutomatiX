@@ -3,7 +3,7 @@ Automatix Customer Portal is a customer-facing web portal that connects to Sales
 
 ## Technology
 
-JavaScript, HTML, CSS, NODE, BOOTSRAP, HEROKU, MongoDB, Salesforce, iCount, Calendly and JotForm
+JavaScript, Node.js, HTML, CSS, BOOTSRAP, HEROKU, MongoDB, Salesforce, iCount, Calendly and JotForm
 
 ## Login Credentials
 
