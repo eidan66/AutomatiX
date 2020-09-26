@@ -15,7 +15,7 @@ require('dotenv').config();
 
 // User model
 const User = require('../models/User');
-const {AsyncResultLocator} = require('jsforce');
+const { AsyncResultLocator } = require('jsforce');
 
 // Login Page
 router.get('/login', (req, res) => res.render('login'));
@@ -48,7 +48,7 @@ router.get('/icount', ensureAuthenticated, (req, res) => {
   // iCount Login api
   https
     .get(
-      'https://api.icount.co.il/api/v3.php/auth/login?cid=vio&user=api&pass=vjNJ668B',
+      process.env.ICOUNT,
       (resp) => {
         let data = '';
 
